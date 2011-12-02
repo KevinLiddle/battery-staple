@@ -1,5 +1,4 @@
 require 'random_password'
-require 'randomizer'
 
 describe RandomPassword do
 

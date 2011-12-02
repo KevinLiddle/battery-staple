@@ -1,3 +1,6 @@
+require 'randomizer'
+require 'dictionary_reader'
+
 class RandomPassword
 
   def initialize(randomizer = Randomizer.new)
@@ -11,5 +14,10 @@ class RandomPassword
       password << dictionary[key]
     end
     password.join(" ")
+  end
+
+  def self.generate(num_words)
+    dictionary = DictionaryReader.read
+    RandomPassword.new.generate(dictionary, num_words)
   end
 end
