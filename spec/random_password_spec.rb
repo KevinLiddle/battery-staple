@@ -8,27 +8,26 @@ describe RandomPassword do
     RandomPassword.new.generate(dictionary).split(" ").should include("a")
   end
 
-  it "generates a random password of given length" do
+  it "generates random password of given length" do
     dictionary = ["a", "b", "c"]
-    RandomPassword.generate(dictionary, Randomizer.new, 2).split(" ").length.should == 2
+    RandomPassword.new.generate(dictionary, 2).split(" ").length.should == 2
   end
 
-  it "uses rand to find a random word" do
-    dictionary = ["a", "b", "c"]
-    num_words = 3
+  it "generates random password using randomizer" do
+    dictionary = ["a", "b", "c", "d", "e"]
+    num_words = 2
 
-    password = RandomPassword.generate(dictionary, FakeRandomizer.new(2), num_words)
-    password.should == "c c c"
+    password = RandomPassword.new(FakeRandomizer.new([0, 4])).generate(dictionary, num_words)
+    password.should == "a e"
   end
 end
 
 class FakeRandomizer
-
-  def initialize(random_value = 0)
-    @random_value = random_value
+  def initialize(random_values)
+    @random_values = random_values
   end
 
   def random(ceiling)
-    @random_value
+    @random_values.shift
   end
 end
