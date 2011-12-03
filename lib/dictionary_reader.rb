@@ -1,6 +1,9 @@
 class DictionaryReader
   def self.read
-    File.readlines("dictionary.txt").reject { |line| line.size < 4 || uppercase?(line) }
+    words = File.readlines("#{File.dirname(__FILE__)}/dictionary.txt").reject do |line|
+      line.strip.size < 4 || uppercase?(line)
+    end
+    words.map { |word| word.strip }
   end
 
   def self.uppercase?(word)

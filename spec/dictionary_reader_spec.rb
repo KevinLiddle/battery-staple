@@ -6,7 +6,9 @@ describe DictionaryReader do
   it "loads words from dictionary text file" do
 
     FakeFS do
-      File.open("dictionary.txt", "w") do |file|
+      Dir.mkdir("..")
+      Dir.mkdir("lib")
+      File.open("#{File.dirname(__FILE__)}/../lib/dictionary.txt", "w") do |file|
         file.write("\nfoobar\n\nbarjim\n\n")
       end
 
@@ -17,8 +19,8 @@ describe DictionaryReader do
 
   it "excludes words with 3 or fewer letters" do
     FakeFS do
-      File.open("dictionary.txt", "w") do |file|
-        file.write("\njimsedge\njim\njims\njimberjawed\n")
+      File.open("#{File.dirname(__FILE__)}/../lib/dictionary.txt", "w") do |file|
+        file.write("\njimsedge\njim \nyim\r\n tim\njims\njimberjawed\n")
       end
       DictionaryReader.read.should == ["jimsedge", "jims", "jimberjawed"]
     end
@@ -26,7 +28,7 @@ describe DictionaryReader do
 
   it "excludes words that start with a capital letter" do
     FakeFS do
-      File.open("dictionary.txt", "w") do |file|
+      File.open("#{File.dirname(__FILE__)}/../lib/dictionary.txt", "w") do |file|
         file.write("Yabba\ndabba\nDoo")
       end
       DictionaryReader.read.should == ["dabba"]
