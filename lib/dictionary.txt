@@ -14379,7 +14379,6 @@ asquat
 asqueal
 asquint
 asquirm
-ass
 assacu
 assagai
 assai
@@ -14544,7 +14543,6 @@ assizement
 assizer
 assizes
 asslike
-assman
 Assmannshauser
 assmanship
 associability
@@ -22945,7 +22943,6 @@ bitangential
 bitanhol
 bitartrate
 bitbrace
-bitch
 bite
 bitemporal
 bitentaculate
@@ -44947,7 +44944,6 @@ cranny
 cranreuch
 crantara
 crants
-crap
 crapaud
 crapaudine
 crape
@@ -48286,17 +48282,6 @@ Dammara
 damme
 dammer
 dammish
-damn
-damnability
-damnable
-damnableness
-damnably
-damnation
-damnatory
-damned
-damner
-damnification
-damnify
 Damnii
 damning
 damningly
