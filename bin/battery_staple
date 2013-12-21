@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+%w(. ./lib/).each do |path|
+    $: << path
+end
+
+require 'random_password'
+
+num_words = ARGV[0] || 4
+puts ""
+puts "Your new password is: \"#{RandomPassword.generate(num_words)}\""
+puts ""
