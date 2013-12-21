@@ -8,12 +8,10 @@ class RandomPassword
   end
 
   def generate(dictionary, num_words=1)
-    password = []
-    num_words.times do
+    num_words.times.reduce("") do |password, _|
       key = @randomizer.random(dictionary.length)
-      password << dictionary[key]
-    end
-    password.join(" ")
+      "#{password} #{dictionary[key]}"
+    end.strip
   end
 
   def self.generate(num_words)
