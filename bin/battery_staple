@@ -5,8 +5,9 @@
 end
 
 require 'random_password'
+require 'colorize'
 
 num_words = ARGV[0] || 4
 puts ""
-puts "Your new password is: \"#{RandomPassword.generate(num_words)}\""
+puts "Your new password is: \"#{RandomPassword.generate(num_words).colorize(:green)}\""
 puts ""
