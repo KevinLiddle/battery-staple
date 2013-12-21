@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = "battery-staple"
-  s.version     = "0.0.4"
+  s.version     = "0.1.0"
   s.date        = "2013-12-20"
   s.summary     = "Password generator, based on http://xkcd.com/936/"
   s.description = "It generates strong (though obscure) passwords"
