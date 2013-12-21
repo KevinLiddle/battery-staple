@@ -3,8 +3,8 @@ Gem::Specification.new do |s|
   s.version     = "0.0.3"
   s.date        = "2013-12-20"
   s.summary     = "Password generator, based on http://xkcd.com/936/"
-  s.description = "It generates strong (thought obscure) passwords"
-  s.authors     = ["Kevin Liddle, Jim Suchy"]
+  s.description = "It generates strong (though obscure) passwords"
+  s.authors     = ["Kevin Liddle", "Jim Suchy"]
   s.email       = "kevin@8thlight.com"
   s.files       = [
     "lib/dictionary_reader.rb",
