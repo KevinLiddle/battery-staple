@@ -6,9 +6,19 @@ end
 
 require 'battery_staple'
 require 'colorize'
+require 'optparse'
 
-num_words = ARGV[0] ? ARGV[0].to_i : 4
-clean = ARGV[1].to_s == '--clean'
+options = { clean: false }
+
+OptionParser.new do |opts|
+  opts.banner = "Usage: battery_staple --clean"
+
+  opts.on("-c", "--clean", "Filter out those dirty words...") do |clean|
+    options[:clean] = clean
+  end
+end.parse!
+
+num_words = ARGV.first ? ARGV.first.to_i : 4
 
 if num_words == 0
   puts "
@@ -16,6 +26,6 @@ if num_words == 0
   ".colorize(:red)
 else
   puts "
-  Your new password is: \"#{BatteryStaple.generate(num_words, clean).colorize(:green)}\"
+  Your new password is: \"#{BatteryStaple.generate(num_words, options[:clean]).colorize(:green)}\"
   "
 end
