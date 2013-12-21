@@ -7,6 +7,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Kevin Liddle", "Jim Suchy"]
   s.email       = "kevin@8thlight.com"
   s.files       = [
+    "lib/battery_staple.rb",
     "lib/dictionary_reader.rb",
     "lib/random_password.rb",
     "lib/randomizer.rb",

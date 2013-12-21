@@ -13,9 +13,4 @@ class RandomPassword
       "#{password} #{dictionary[key]}"
     end.strip
   end
-
-  def self.generate(num_words, clean = false)
-    dictionary = DictionaryReader.read(clean)
-    RandomPassword.new.generate(dictionary, num_words)
-  end
 end

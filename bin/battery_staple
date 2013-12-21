@@ -4,7 +4,7 @@
     $: << path
 end
 
-require 'random_password'
+require 'battery_staple'
 require 'colorize'
 
 num_words = ARGV[0] ? ARGV[0].to_i : 4
@@ -16,6 +16,6 @@ if num_words == 0
   ".colorize(:red)
 else
   puts "
-  Your new password is: \"#{RandomPassword.generate(num_words, clean).colorize(:green)}\"
+  Your new password is: \"#{BatteryStaple.generate(num_words, clean).colorize(:green)}\"
   "
 end
