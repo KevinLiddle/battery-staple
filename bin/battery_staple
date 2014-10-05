@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 %w(. ./lib/).each do |path|
-    $: << path
+  $: << path
 end
 
 require 'battery_staple'

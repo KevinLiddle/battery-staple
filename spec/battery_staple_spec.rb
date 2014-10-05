@@ -1,10 +1,10 @@
-require "random_password"
+require 'battery_staple'
 
 describe BatteryStaple do
 
   it "reads from actual dictionary and creates some random passwords" do
     password = BatteryStaple.generate(4)
-    password.split(" ").size.should == 4
-    password.include?("\n").should be_false
+    expect(password.split(" ").size).to eq(4)
+    expect(password.include?("\n")).to be_falsey
   end
 end

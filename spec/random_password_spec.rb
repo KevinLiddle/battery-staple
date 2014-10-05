@@ -4,12 +4,12 @@ describe RandomPassword do
 
   it "generates a random password" do
     dictionary = ["a"]
-    RandomPassword.new.generate(dictionary).split(" ").should include("a")
+    expect(RandomPassword.new.generate(dictionary).split(" ")).to include("a")
   end
 
   it "generates random password of given length" do
     dictionary = ["a", "b", "c"]
-    RandomPassword.new.generate(dictionary, 2).split(" ").length.should == 2
+    expect(RandomPassword.new.generate(dictionary, 2).split(" ").length).to eq(2)
   end
 
   it "generates random password using randomizer" do
@@ -17,7 +17,7 @@ describe RandomPassword do
     num_words = 2
 
     password = RandomPassword.new(FakeRandomizer.new([0, 4])).generate(dictionary, num_words)
-    password.should == "a e"
+    expect(password).to eq("a e")
   end
 end
 

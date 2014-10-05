@@ -11,7 +11,7 @@ describe DictionaryReader do
         file.write("\nfoobar\n\nbarjim\n\n")
       end
 
-      DictionaryReader.read.should == ["foobar", "barjim"]
+      expect(DictionaryReader.read).to eq(["foobar", "barjim"])
     end
   end
 
@@ -20,7 +20,7 @@ describe DictionaryReader do
       File.open("#{File.dirname(__FILE__)}/../lib/dictionary.txt", "w") do |file|
         file.write("\njimsedge\njim \nyim\r\n tim\njims\njimberjawed\n")
       end
-      DictionaryReader.read.should == ["jimsedge", "jims", "jimberjawed"]
+      expect(DictionaryReader.read).to eq(["jimsedge", "jims", "jimberjawed"])
     end
   end
 
@@ -29,7 +29,7 @@ describe DictionaryReader do
       File.open("#{File.dirname(__FILE__)}/../lib/dictionary.txt", "w") do |file|
         file.write("Yabba\ndabba\nDoo\n")
       end
-      DictionaryReader.read.should == ["dabba"]
+      expect(DictionaryReader.read).to eq(["dabba"])
     end
   end
 
@@ -38,7 +38,7 @@ describe DictionaryReader do
       File.open("#{File.dirname(__FILE__)}/../lib/dictionary.txt", "w") do |file|
         file.write("yabba\ndabba\npoop:profane\n")
       end
-      DictionaryReader.read(false).should == ["yabba", "dabba", "poop"]
+      expect(DictionaryReader.read(false)).to eq(["yabba", "dabba", "poop"])
     end
   end
 
@@ -47,7 +47,7 @@ describe DictionaryReader do
       File.open("#{File.dirname(__FILE__)}/../lib/dictionary.txt", "w") do |file|
         file.write("yabba\ndabba\npoop:profane\n")
       end
-      DictionaryReader.read(true).should == ["yabba", "dabba"]
+      expect(DictionaryReader.read(true)).to eq(["yabba", "dabba"])
     end
   end
 
